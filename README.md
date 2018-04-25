@@ -17,11 +17,6 @@ const EmberApp = require('ember-patch-config/ember-app');
 module.exports = function (defaults) {
 	const app = new EmberApp(defaults, {
         // ...
-
-        // Add this in case the meta config tag's content is serialized with Base64 (which is by default by ember-cli)
-        'ember-patch-config': {
-            isBase64: true
-        }
     }
 }
 ```
@@ -58,9 +53,4 @@ Options can be passed within the `ember-patch-config` node of `EmberApp` options
 #### `globalVarName`
 Type: `String`  
 Default: `'configToPatch'`   
-The global variable name to patch the config from.
-
-#### `isBase64`
-Type: `Boolean`   
-Default: `false`   
-Specify whether the meta config tag's content is serialized with Base64 (which is by default by ember-cli).  
+The global variable name to patch the config from. 
