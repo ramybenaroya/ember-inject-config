@@ -1,6 +1,6 @@
 # Ember Patch Config
 
-Patch Ember CLI app configuration at runtime.
+Patch Ember CLI 2.x app configuration at runtime.
 
 ## What is it for?
 Well, sometimes you just want to change ember's config (`app/config/environment.js`) before everything is loaded, or even extract it programmatically from Local Storage or a Cookie.
