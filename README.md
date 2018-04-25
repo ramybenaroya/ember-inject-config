@@ -24,8 +24,8 @@ module.exports = function (defaults) {
         }
     }
 }
-
 ```
+
 Then, add an inline script in `app/index.html` (before the app & vendor scripts):
 ```html
 <!-- app/index.html -->
