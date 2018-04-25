@@ -7,7 +7,11 @@ Well, sometimes you just want to change ember's config (`app/config/environment.
 
 ## Ok, how?
 
-First you need to import `EmberApp` from a different location:
+```bash
+npm install ember-patch-config --save-dev
+```
+
+So, first you need to import `EmberApp` from a different location:
 
 ```javascript
 // ember-cli-build.js
