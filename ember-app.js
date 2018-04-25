@@ -1,13 +1,13 @@
-const OfficialEmberApp = require("ember-cli/lib/broccoli/ember-app");
+const EmberApp = require("ember-cli/lib/broccoli/ember-app");
 
-class EmberApp extends OfficialEmberApp {
+class PatchedEmberApp extends EmberApp {
 	constructor(...args) {
 		super(...args);
     }
     
 	_contentForConfigModule(content, config) {
-		let options = this.options && this.options["ember-inject-config"];
-		let injectedContent = getInjectedContent(options);
+		let options = this.options && this.options["ember-patch-config"];
+		let patchedContent = getPatchedContent(options);
 		let returnIndex;
 		let appConfigFromMeta;
 
@@ -17,21 +17,21 @@ class EmberApp extends OfficialEmberApp {
 		returnIndex = appConfigFromMeta.indexOf("return ");
 		appConfigFromMeta =
 			appConfigFromMeta.substring(0, returnIndex) +
-			injectedContent +
+			patchedContent +
 			appConfigFromMeta.substring(returnIndex, appConfigFromMeta.length);
 		content[content.length - 1] = appConfigFromMeta;
 	}
 }
 
-if (typeof OfficialEmberApp.env === "function") {
-	EmberApp.env = OfficialEmberApp.env;
+if (typeof EmberApp.env === "function") {
+	PatchedEmberApp.env = EmberApp.env;
 }
 
-function getInjectedContent(options) {
+function getPatchedContent(options) {
 	options = options || {};
-	var varName = options.globalVarName || "configToInject",
+	var varName = options.globalVarName || "configToPatch",
 		isBase64 = !!(options && options.isBase64),
-		injectedContent = `var parsedConfigToInject;
+		patchedContent = `var parsedConfigToPatch;
 var deepExtend = function(out) {
   out = out || {};
 
@@ -59,15 +59,15 @@ var deepExtend = function(out) {
 };
 	if (window["${varName}"]) {
 		try {
-			parsedConfigToInject = window["${varName}"];
+			parsedConfigToPatch = window["${varName}"];
 			${isBase64 ? `if (typeof window["${varName}"] === "string") {
-				parsedConfigToInject = JSON.parse(atob(window["${varName}"]));
+				parsedConfigToPatch = JSON.parse(atob(window["${varName}"]));
 			}` : ""}
-			deepExtend(config, parsedConfigToInject);
+			deepExtend(config, parsedConfigToPatch);
 		} catch (e) {}
 	}
 	`;
-	return injectedContent;
+	return patchedContent;
 }
 
-module.exports = EmberApp;
+module.exports = PatchedEmberApp;

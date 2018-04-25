@@ -1,6 +1,6 @@
 {
-  "name": "ember-inject-config",
-  "version": "2.0.0",
+  "name": "ember-patch-config",
+  "version": "1.0.0",
   "description": "",
   "main": "ember-app.js",
   "scripts": {
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ramybenaroya/ember-inject-config.git"
+    "url": "git+https://github.com/ramybenaroya/ember-patch-config.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ramybenaroya/ember-inject-config/issues"
+    "url": "https://github.com/ramybenaroya/ember-patch-config/issues"
   },
-  "homepage": "https://github.com/ramybenaroya/ember-inject-config#readme",
+  "homepage": "https://github.com/ramybenaroya/ember-patch-config#readme",
   "peerDependencies": {
     "ember-cli": "*"
   }
