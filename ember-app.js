@@ -23,8 +23,8 @@ class EmberApp extends OfficialEmberApp {
 	}
 }
 
-if (typeof EmberApp.env === "function") {
-	RAMPApp.env = EmberApp.env;
+if (typeof OfficialEmberApp.env === "function") {
+	EmberApp.env = OfficialEmberApp.env;
 }
 
 function getInjectedContent(options) {
