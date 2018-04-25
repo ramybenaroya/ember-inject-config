@@ -1,0 +1,25 @@
+{
+  "name": "ember-inject-config",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ember-app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ramybenaroya/ember-inject-config.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ramybenaroya/ember-inject-config/issues"
+  },
+  "homepage": "https://github.com/ramybenaroya/ember-inject-config#readme",
+  "peerDependencies": {
+    "ember-cli": "*"
+  },
+  "devDependencies": {
+    "ember-cli": "^3.1.2"
+  }
+}
