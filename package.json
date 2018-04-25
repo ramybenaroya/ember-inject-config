@@ -1,6 +1,6 @@
 {
   "name": "ember-inject-config",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "",
   "main": "ember-app.js",
   "scripts": {
@@ -18,8 +18,5 @@
   "homepage": "https://github.com/ramybenaroya/ember-inject-config#readme",
   "peerDependencies": {
     "ember-cli": "*"
-  },
-  "devDependencies": {
-    "ember-cli": "^3.1.2"
   }
 }
